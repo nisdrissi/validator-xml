@@ -37,13 +37,22 @@ On lance l’execution d’une mise à jour ET de l’installation de la librair
 <blockquote><p>RUN apt-get update && apt-get install -y libxml2<p></blockquote>
 On ajoute dans le container le script pour la validation du XML et de son XSD. Ce script est constitué de la commande suivante : 
 
-xmllint $schemaXML --schema $schemaXSD --noout ;
+<blockquote><p>xmllint $schemaXML --schema $schemaXSD --noout ;</p></blockquote>
 
-ADD ScriptValidatorXMLandXSD.sh Users/nisrinedrissi/Desktop/validatorxml/ScriptValidatorXMLandXSD.sh
+<blockquote><p>ADD ScriptValidatorXMLandXSD.sh Users/nisrinedrissi/Desktop/validatorxml/ScriptValidatorXMLandXSD.sh</p></blockquote>
 
 On y trouve 2 variables :
 schemaXML : pour le fichier XML à valider
 schemaXSD : pour le fichier XSD à valider
 
 RUN chmod +x Users/nisrinedrissi/Desktop/validatorxml/ScriptValidatorXMLandXSD.sh
-Enfin, on lance le script qui sera executé.
+Enfin, on lance le script qui sera executé. 
+
+III. UTILISATION DU CONTAINER
+
+Pour lancer le container, on applique la commande suivante : 
+
+<blockquote><p>docker run -v Chemin_du_fichier_qu'on_souhaite_valider/bla/bla/bla:/home /home/nom_fichier_xml.xml /home/nom_fichier_xsd.xsd</p></blockquote>
+
+Pour l'exemple, des fichiers valides et non valides ont été déposé sur le repository afin de permettre de tester le bon fonctionnement de l'application. 
+Pour ces exemples, il s'agit d'un fichier XML et de son XSD trouvé sur le site internet suivant : <a href="https://msdn.microsoft.com/fr-fr/library/bb387025.aspx">https://msdn.microsoft.com/fr-fr/library/bb387025.aspx</a>
