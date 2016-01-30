@@ -57,3 +57,19 @@ Pour lancer le container, on applique la commande suivante :
 
 Pour l'exemple, des fichiers valides et non valides ont été déposé sur le repository afin de permettre de tester le bon fonctionnement de l'application. 
 Pour ces exemples, il s'agit d'un fichier XML et de son XSD trouvé sur le site internet suivant : <a href="https://msdn.microsoft.com/fr-fr/library/bb387025.aspx">https://msdn.microsoft.com/fr-fr/library/bb387025.aspx</a>
+
+
+<ul>
+<li>
+Fichiers valides :
+<ul>
+<li>custumerExempleOK.xml</li>
+<li>custumerExempleOK.xsd</li>
+</ul>
+
+<li>Fichiers erronés :
+<ul>
+<li>custumerExempleError.xml</li>
+<li>custumerExempleError.xsd</li>
+</li>
+</ul>
