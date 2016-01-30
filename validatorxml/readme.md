@@ -29,17 +29,18 @@ Ensuite, on utilise la commande $ docker images afin d’avoir un aperçu des im
 
 Ensuite, on peut créer un Dockerfile avec des paramètres spécifiques :
 
-L’image d’origine est debian
+L’image d’origine est debian :
 <blockquote></strong>FROM debian:latest</strong></blockquote>
-La maintenance est effectuée par un auteur
+La maintenance est effectuée par un auteur :
 <blockquote><p>MAINTAINER drissi</p></blockquote>
-On lance l’execution d’une mise à jour ET de l’installation de la librairie libxml2-utils
+On lance l’execution d’une mise à jour ET de l’installation de la librairie libxml2-utils :
 <blockquote><p>RUN apt-get update && apt-get install -y libxml2<p></blockquote>
-On ajoute dans le container le script pour la validation du XML et de son XSD. Ce script est constitué de la commande suivante : 
+On ajoute dans le container le script pour la validation du XML et de son XSD :
+<blockquote><p>ADD ScriptValidatorXMLandXSD.sh Users/nisrinedrissi/Desktop/validatorxml/ScriptValidatorXMLandXSD.sh</p></blockquote>
+Ce script est constitué de la commande suivante : 
 
 <blockquote><p>xmllint $schemaXML --schema $schemaXSD --noout ;</p></blockquote>
 
-<blockquote><p>ADD ScriptValidatorXMLandXSD.sh Users/nisrinedrissi/Desktop/validatorxml/ScriptValidatorXMLandXSD.sh</p></blockquote>
 
 On y trouve 2 variables :
 schemaXML : pour le fichier XML à valider
@@ -48,7 +49,7 @@ schemaXSD : pour le fichier XSD à valider
 RUN chmod +x Users/nisrinedrissi/Desktop/validatorxml/ScriptValidatorXMLandXSD.sh
 Enfin, on lance le script qui sera executé. 
 
-III. UTILISATION DU CONTAINER
+####III. UTILISATION DU CONTAINER
 
 Pour lancer le container, on applique la commande suivante : 
 
